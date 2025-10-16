@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lewis Ellwood — Portfolio</title>
+<style>
+:root{
+  --bg:#05060c;--bg2:#0a1020;--text:#e8f0ff;--muted:#9bb0d3;
+  --a1:#5be3ff;--a2:#4d7cff;--a3:#7c44ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,sans-serif;color:var(--text);
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  overflow-x:hidden;
+}
+canvas#stars{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.85}
+
+/* NAV */
+header{position:sticky;top:0;background:rgba(5,6,12,.8);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+.nav ul{display:flex;gap:16px;list-style:none}
+.nav a{color:var(--text);text-decoration:none;opacity:.8}
+.nav a:hover{opacity:1}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:120px 20px}
+.logo{
+  font-size:clamp(42px,8vw,90px);font-weight:900;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3),var(--a1));
+  -webkit-background-clip:text;color:transparent;
+  animation:shimmer 6s linear infinite,glow 4s ease-in-out infinite;
+}
+.role{font-size:22px;color:var(--muted);margin-top:8px}
+.tagline{margin:14px auto 30px;max-width:600px;color:var(--muted)}
+
+/* ORBIT */
+.orbit-wrapper{position:relative;width:600px;height:600px;margin:60px auto}
+.center-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center}
+.orbit-path{
+  position:absolute;top:50%;left:50%;
+  width:520px;height:520px;margin-left:-260px;margin-top:-260px;
+  border-radius:50%;
+  border:1px solid rgba(91,227,255,.35);
+  box-shadow:0 0 15px rgba(91,227,255,.35),0 0 25px rgba(91,227,255,.2) inset;
+}
+.skill-planet{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  padding:8px 12px;border-radius:20px;
+  background:rgba(91,227,255,.15);
+  border:1px solid rgba(91,227,255,.4);
+  color:var(--text);
+  font-size:14px;white-space:nowrap;
+  box-shadow:0 0 10px rgba(91,227,255,.4);
+  transition:.3s;
+}
+.skill-planet:hover{background:rgba(91,227,255,.35);transform:translate(-50%,-50%) scale(1.1)}
+
+.section{padding:70px 20px;max-width:900px;margin:auto}
+.section h2{font-size:clamp(26px,4vw,36px);margin-bottom:18px}
+.section p.lead{color:var(--muted);margin-bottom:20px;line-height:1.6}
+.timeline{border-left:2px solid var(--a2);padding-left:16px;display:grid;gap:16px}
+.timeline .item{padding:10px 14px;background:rgba(255,255,255,.05);border-radius:8px;line-height:1.5}
+footer{padding:30px;text-align:center;color:var(--muted);font-size:14px}
+
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+@keyframes glow{0%,100%{text-shadow:0 0 12px rgba(91,227,255,.15)}50%{text-shadow:0 0 24px rgba(124,68,255,.3)}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<header>
+  <nav class="nav">
+    <div class="logo">LE</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#reference">Reference</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="orbit-wrapper">
+    <div class="center-logo">
+      <h1 class="logo">Lewis Ellwood</h1>
+      <div class="role">Aspiring Digital Marketer | Creative & Analytical</div>
+    </div>
+    <div class="orbit-path"></div>
+    <div class="skill-planet">Social Media Management</div>
+    <div class="skill-planet">Content Creation</div>
+    <div class="skill-planet">Analytics & Reporting</div>
+    <div class="skill-planet">WordPress & Web Design</div>
+    <div class="skill-planet">Communication & Teamwork</div>
+    <div class="skill-planet">Problem Solving & Adaptability</div>
+  </div>
+  <p class="tagline">Passionate about digital — I turn data into insight and ideas into content. Looking to grow in the industry through volunteering and hands-on contribution.</p>
+</section>
+
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p class="lead">I’m a motivated and ambitious young digital marketer with real-world experience in content creation, social media, analytics, and web management. I pride myself on being adaptable, professional, and eager to learn. My goal is to grow within the industry by taking on volunteering opportunities, collaborating with experienced professionals, and expanding my skill set across all aspects of digital marketing.</p>
+</section>
+
+<section id="experience" class="section">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="item">
+      <h3>Digital Marketer — Artic Bee Ltd</h3>
+      <p><em>May 2021 – Aug 2021</em></p>
+      <ul>
+        <li>Designed and scheduled social media campaigns</li>
+        <li>Produced creative digital content and graphics</li>
+        <li>Monitored analytics and prepared performance reports</li>
+        <li>Managed and updated web content layouts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="item">
+      <h3>Notre Dame Catholic Sixth Form College</h3>
+      <p><em>2020 – 2023</em></p>
+      <p>T Level in Digital Production, Design & Development and English Language GCSE (5).</p>
+    </div>
+    <div class="item">
+      <h3>Bishop Young Academy, Leeds</h3>
+      <p><em>2015 – 2021</em></p>
+      <p>10 GCSEs including Maths, Further Maths, Sciences, English Literature, Geography, and Business Studies.</p>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="section">
+  <h2>My Journey & Next Steps</h2>
+  <p class="lead">My digital journey began at Artic Bee, where I learned how creativity and analytics combine to deliver results. That experience shaped my ambition to pursue marketing as a career. I now want to gain more exposure through volunteering and real-world projects, building a versatile skill set that fuses technical knowledge, storytelling, and strategic insight.</p>
+</section>
+
+<section id="reference" class="section">
+  <h2>Reference</h2>
+  <blockquote style="font-style:italic;line-height:1.6">
+    “Lewis was professional, articulate, and confident when liaising with clients. He consistently delivered quality work, was punctual, well-presented, and eager to learn. I recommend him without hesitation.”
+    <br><br>— <strong>Tracey Cleminson, Director, Artic Bee Ltd</strong>
+  </blockquote>
+</section>
+
+<section id="contact" class="section" style="text-align:center">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:lewislje2004@mail.com">lewislje2004@mail.com</a><br>
+     Phone: <a href="tel:+447585578570">+44 7585 578570</a></p>
+  <a class="btn" href="lewis's CV.pdf" download>Download My CV (PDF)</a>
+</section>
+
+<footer>
+  &copy; <script>document.write(new Date().getFullYear())</script> Lewis Ellwood
+</footer>
+
+<script>
+// stars
+const canvas=document.getElementById('stars');const ctx=canvas.getContext('2d');
+let W,H,stars;
+function init(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;
+  stars=new Array(150).fill().map(()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+0.3,t:Math.random()*6,s:0.002+Math.random()*0.004}))}
+function draw(){ctx.clearRect(0,0,W,H);
+  for(const st of stars){st.t+=st.s;const a=0.4+Math.sin(st.t)*0.3;
+    ctx.globalAlpha=a;ctx.beginPath();ctx.arc(st.x,st.y,st.r,0,Math.PI*2);
+    ctx.fillStyle='#5be3ff';ctx.fill();}
+  requestAnimationFrame(draw);}
+init();draw();addEventListener('resize',init);
+
+// orbit animation
+const skills=document.querySelectorAll('.skill-planet');
+const radius=260;let angle=0;
+function animateOrbit(){
+  angle+=0.003;
+  skills.forEach((skill,i)=>{
+    const step=(Math.PI*2/skills.length)*i;
+    const x=Math.cos(angle+step)*radius;
+    const y=Math.sin(angle+step)*radius;
+    skill.style.transform=`translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+  });
+  requestAnimationFrame(animateOrbit);
+}
+animateOrbit();
+</script>
+</body>
+</html>
