@@ -192,6 +192,87 @@ function animateOrbit(){
   requestAnimationFrame(animateOrbit);
 }
 animateOrbit();
+</script> 
+
+<!-- ⭐ Lewis’ Nebula AI Assistant (Tiledesk) ⭐ -->
+<style>
+  @keyframes nebula-pulse {
+    0% { box-shadow: 0 0 10px #1e90ff; }
+    50% { box-shadow: 0 0 25px #4cc6ff; }
+    100% { box-shadow: 0 0 10px #1e90ff; }
+  }
+  .tiledesk-launcher-custom {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 30% 30%, #1e90ff, #000814) !important;
+    border: 2px solid #4cc6ff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 20px !important;
+    color: white !important;
+    animation: nebula-pulse 3s infinite ease-in-out !important;
+    text-shadow: 0 0 8px #4cc6ff !important;
+    font-family: Arial, sans-serif !important;
+  }
+  .tiledesk-widget {
+    background: radial-gradient(circle at top left, #002a4f, #000814 80%) !important;
+  }
+</style>
+
+<script type="application/javascript">
+  window.tiledeskSettings = {
+    projectid: "6935b887862efe001443abf9",
+    widget: {
+      startHidden: false,
+      calloutTitle: "🌌 Meet Alex",
+      calloutMsg: "Need help exploring Lewis' portfolio?",
+      calloutTimer: 1,
+      theme: {
+        variables: {
+          "--td-primary-color": "#4cc6ff",
+          "--td-primary-color-dark": "#0077b6",
+          "--td-secondary-color": "#001226",
+          "--td-header-background": "linear-gradient(135deg, #001226, #003a63 50%, #0a85d1)",
+          "--td-text-color": "#ffffff",
+          "--td-agent-message-bg": "#00253d",
+          "--td-user-message-bg": "#004a7c",
+          "--td-launcher-background": "transparent",
+          "--td-launcher-shadow": "0 0 20px #1e90ff",
+          "--td-message-radius": "14px",
+          "--td-header-text-color": "#ffffff"
+        }
+      },
+      launcher: { customLauncher: true, size: "52px" }
+    },
+    callout: {
+      show: true,
+      title: "Alex 🌌",
+      message: "Hey! I’m Alex. Ask me anything about Lewis’ skills, CV, projects or journey."
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new MutationObserver(() => {
+      let launcher = document.querySelector("#tiledesk-launcher");
+      if (launcher && !launcher.classList.contains("tiledesk-launcher-custom")) {
+        launcher.classList.add("tiledesk-launcher-custom");
+        launcher.innerHTML = "L.E.";
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+
+  (function(d, s, id) { 
+    var w = window; var d0 = document;
+    var i=function(){i.c(arguments);}; i.q=[]; i.c=function(args){i.q.push(args);}; w.Tiledesk=i;
+    var js, fjs=d0.getElementsByTagName(s)[0];
+    if(d0.getElementById(id)) return;
+    js=d0.createElement(s); js.id=id; js.async=true;
+    js.src="https://widget.tiledesk.com/v6/launch.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document,'script','tiledesk-jssdk'));
 </script>
 </body>
 </html>
